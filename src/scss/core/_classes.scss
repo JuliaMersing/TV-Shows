@@ -1,0 +1,15 @@
+.listStyle {
+  background-color: $color-background;
+  color: #dddddd;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.favourite {
+  background-color: $color-main;
+  color: $color-background;
+}

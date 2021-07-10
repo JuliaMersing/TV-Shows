@@ -1,0 +1,71 @@
+.all-seriesFav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+  position: fixed;
+  width: 20%;
+  top: 10%;
+  right: 0%;
+}
+
+.title-fav {
+  font-size: 18px;
+  text-align: center;
+}
+
+.favourites-serie {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btn-delete {
+  width: 15px;
+  border-radius: 5px;
+  border-color: $color-main;
+  color: $color-main;
+  font-weight: bold;
+  background-color: $color-background;
+}
+
+.flex-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.serie_imgFav {
+  height: 30px;
+  width: 30px;
+  @media all and (min-width: 780px) {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+.serie_titleFav {
+  font-size: 10px;
+}
+
+.far {
+  color: $color-main;
+  border-style: none;
+  cursor: pointer;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  margin-top: 20px;
+}
+
+.far:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388;
+}
