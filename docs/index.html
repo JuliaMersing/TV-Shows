@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Módulo 2. Evaluación final.</title>
+    <title>TV SHOW FINDER</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       rel="stylesheet"
@@ -16,28 +16,45 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="icon" href="./assets/images/favicon.png" />
   </head>
   <body class="wrapper">
-    <header>
-      <h1 class="title"><span class="title-highlight">Adalab</span>Film</h1>
+    <header class="header">
+      <h1 class="header__title">
+        <span class="header__title-highlight">Net</span>Film
+      </h1>
+
+      <form action="" class="header__form js-form">
+        <input
+          type="text"
+          class="header__form--input js-input"
+          placeholder="What do you want to watch?"
+        />
+        <i class="header__icon fas fa-search input-btn js-button"></i>
+      </form>
     </header>
 
     <main class="elements-wrapper">
-      <section>
-        <input type="text" class="input js-input" placeholder="Buscar serie" />
-        <i class="fas fa-search input-btn js-button"></i>
-        <div>
-          <ul class="display-series js-list"></ul>
-        </div>
-      </section>
-
-      <section class="all-seriesFav">
-        <h2 class="title-fav">Favoritas</h2>
-        <ul class="js-favouriteList"></ul>
-        <i class="far fa-trash-alt input-btn js-resetFav"></i>
-      </section>
+      <main class="main">
+        <section>
+          <h2 class="main__subtitle">Favourites</h2>
+          <div class="main__container--favourites">
+            <ul class="main__container--faved js-favouriteList"></ul>
+            <i class="far fa-trash-alt input-btn js-resetFav"></i>
+        </section>
+        <section>
+          <h2 class="main__subtitle">Series</h2>
+          <div class="main__container--series">
+            <ul class="main__search js-list"></ul>
+        </section>
+      </main>
 
     </main>
+    <footer class="footer">
+      <small class="footer__small"> NetFilm &copy; 2021 </small>
+      <i class="fas fa-film footer__logo"></i>
+    </footer>
+
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
