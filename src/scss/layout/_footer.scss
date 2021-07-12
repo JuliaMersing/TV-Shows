@@ -1,0 +1,22 @@
+.footer {
+  position: static;
+  margin-top: 10px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 15px;
+  font-family: $color-text;
+  border-top: 1px solid $color-main;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.8;
+
+  &__small {
+    color: $color-text;
+  }
+
+  &__logo {
+    height: 40px;
+  }
+}

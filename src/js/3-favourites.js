@@ -3,6 +3,8 @@
 /* eslint-disable quotes */
 "use strict";
 
+//Paint Favourites
+
 function addListenerToSeries() {
   const allSeries = document.querySelectorAll(".js-li");
   for (const serie of allSeries) {
@@ -37,20 +39,20 @@ function showSeriesFav(data) {
 
     if (show.image === null) {
       favouritesList.innerHTML += `
-        <li class= "listStyle js-li" ><div class="flex-btn">
-            <h2 class="serie_titleFav">${show.name}
+        <li class= "main__list--item main__list--item-faved js-li" ><div class="flex-btn">
+            <h2 class="main__card--title-faved">${show.name}
               </h2>
-              <input id="${show.id}" class="btn-delete  js-inputDelete" type="button" value="x" />
+              <i id="${show.id}" class="fas fa-times btn-delete js-delete"></i>
             </div>
-            <img class="serie_imgFav" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" alt="not image available"></img></li>`;
+            <img class="main__card--img" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" alt="not image available"></img></li>`;
     } else {
       favouritesList.innerHTML += `
-        <li class= "listStyle js-li">
+        <li class= "main__list--item main__list--item-faved js-li">
           <div class="flex-btn">
-            <h2 class="serie_titleFav">${show.name}</h2>
-            <input id="${show.id}" class="btn-delete js-inputDelete" type="button" value="x" />
+            <h2 class="main__card--title-faved">${show.name}</h2>
+            <i id="${show.id}" class="fas fa-times btn-delete js-delete"></i>
           </div>
-          <img class="serie_imgFav" src="${show.image.medium}" alt="Tv Show ${show.name}"></li>
+          <img class="main__card--img" src="${show.image.medium}" alt="Tv Show ${show.name}"></li>
     `;
     }
     addListenerToSeriesFav();
@@ -71,29 +73,12 @@ function renderFavSeriesStorage() {
 renderFavSeriesStorage();
 
 function addListenerToSeriesFav() {
-  const allDeleteButton = document.querySelectorAll(".js-inputDelete");
+  const allDeleteButton = document.querySelectorAll(".js-delete");
   for (const buttonDelete of allDeleteButton) {
     buttonDelete.addEventListener("click", handleClickSeries);
   }
 }
 
-/* function deleteFav(event) {
-  const serieToDelete = event.currentTarget;
-  let buttonDeleteId = parseInt(event.currentTarget.id);
-
-  const searchDeletedId = favourites.findIndex(
-    (show) => show.show.id === buttonDeleteId
-  );
-
-  if (searchDeletedId === -1) {
-    const searchSerieData = globalData.find((show) => show.show.id === serieId);
-    favourites.push(searchSerieData);
-  } else {
-    favourites.splice(searchDeletedId, 1);
-  }
-  showSeriesFav(favourites);
-  addLocalStorage();
-} */
 function resetFavSeries() {
   favouritesList.innerHTML = "";
 }
