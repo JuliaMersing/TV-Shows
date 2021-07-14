@@ -11,26 +11,30 @@ function addListenerToSeries() {
     serie.addEventListener("click", handleClickSeries);
   }
 }
-
 function handleClickSeries(event) {
   const selectedSeries = event.currentTarget;
-  let serieId = parseInt(event.currentTarget.id);
-
-  const searchFavouritesIndex = favourites.findIndex(
-    (show) => show.show.id === serieId
-  );
-
-  if (searchFavouritesIndex === -1) {
-    const searchSerieData = globalData.find((show) => show.show.id === serieId);
-    favourites.push(searchSerieData);
+  let serieId = parseInt(selectedSeries.id);
+  const serieInfo = isSerieInSeries(serieId);
+  const id = serieInfo.show.id;
+  if (isSerieInFavorites(id)) {
+    removeFromFavorites(serieId);
   } else {
-    favourites.splice(searchFavouritesIndex, 1);
+    favourites.push(serieInfo);
   }
-
   showSeries(globalData);
   showSeriesFav(favourites);
   addLocalStorage();
 }
+
+const isSerieInFavorites = (id) => {
+  return !!favourites.find((item) => item.show.id === id);
+};
+const isSerieInSeries = (id) => {
+  return globalData.find((item) => item.show.id === id);
+};
+const removeFromFavorites = (id) => {
+  favourites = favourites.filter((fav) => fav.show.id !== id);
+};
 
 function showSeriesFav(data) {
   favouritesList.innerHTML = "";
